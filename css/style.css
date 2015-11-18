@@ -1,0 +1,21 @@
+*{margin:0; padding:0; font-family: 'Roboto', sans-serif;}
+a {text-decoration:none; outline:none}
+a img {border:none}
+.clear {clear:both; overflow:hidden; line-height:0; font-size:0; height:0}
+.clearfix:after{visibility:hidden;display:block;font-size:0;content:" ";clear: both;height:0}
+* html .clearfix{zoom:1}
+*:first-child+html /**/ix{zoom:1}
+ul, li {list-style:none}
+.header {padding: 20px}
+.header .logo {float: left; width: 300px; color: #02617c; font-size: 30px; line-height: 40px}
+#copyCode {float: right; width: 100px; height: 35px; background: #02617c; color: #fff; text-align: center;; line-height: 35px}
+.wrapper {width: 95%; margin:0 auto}
+.lColumn {width: 25%; float: left; background: #ccc}
+.mainColumn {width: 55%; float: left; background: #bbb}
+.rColumn {width: 20%; float: right; background: #aaa}
+
+/*css for accordian start*/
+.dNone {display: none;}
+.innContent {padding-bottom: 10px}
+.scroller {height: 400px; overflow: scroll;}
+/*css for accordian End*/

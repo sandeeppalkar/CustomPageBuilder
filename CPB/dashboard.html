@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html ng-app="drag-and-drop">
+  <head lang="en">
+	<meta charset="utf-8" />
+	<link rel="icon" type="image/png" href="assets/img/favicon.ico">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+	<title>Custom Page Builder</title>
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+    
+    
+    <!-- Bootstrap core CSS     -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Animation library for notifications   -->
+    <link href="assets/css/animate.min.css" rel="stylesheet"/>    
+    <!--  Light Bootstrap Table core CSS    -->
+    <link href="assets/css/light-bootstrap-dashboard.css" rel="stylesheet"/>    
+    <!--  Fonts and icons     -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
+    <link href="assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+
+
+ <link href='dragula.css' rel='stylesheet' type='text/css' />
+<link href='example.css' rel='stylesheet' type='text/css' />
+
+
+    <style>
+      .thumbnail { height: 280px !important; }
+      .btn-droppable { width:300px; height: 100px; padding-left: 4px; }
+      .btn-draggable { width: 160px; }
+      .emage { height: 215px; }
+    </style>
+
+    
+  </head>
+
+</head>
+<body> 
+
+<div class="wrapper"  ng-controller="oneCtrl">
+    <div class="sidebar" data-color="azure">    
+    
+    <!--   
+        
+        Tip 1: you can change the color of the sidebar using: data-color="blue | azure | green | orange | red | purple" 
+        Tip 2: you can also add an image using data-image tag
+        
+    -->
+    
+    	<div class="sidebar-wrapper">
+            <div class="logo">
+                <a href="http://www.creative-tim.com" class="simple-text">                    
+                Custom Page Builder
+                </a>
+            </div>
+                       
+
+
+            <ul class="nav">
+                <li class="active">
+                    <a href="dashboard.html">
+                        <i class="pe-7s-graph"></i> 
+                        <p>Desktop Landing</p>
+                    </a>            
+                </li>
+                <li>
+                    <a href="user.html">
+                        <i class="pe-7s-user"></i> 
+                        <p>Mobile Landing</p>
+                    </a>
+                </li> 
+                <li>
+                    <a href="table.html">
+                        <i class="pe-7s-note2"></i> 
+                        <p>Tablet Landing</p>
+                    </a>        
+                </li>
+               <li>
+                    <a href="dashboard.html">
+                        <i class="pe-7s-graph"></i> 
+                        <p>Desktop Results</p>
+                    </a>            
+                </li>
+                <li>
+                    <a href="user.html">
+                        <i class="pe-7s-user"></i> 
+                        <p>Mobile Results</p>
+                    </a>
+                </li> 
+                <li>
+                    <a href="table.html">
+                        <i class="pe-7s-note2"></i> 
+                        <p>Tablet Results</p>
+                    </a>        
+                </li>
+                <li>
+                    <a href="dashboard.html">
+                        <i class="pe-7s-graph"></i> 
+                        <p>Desktop No-Results</p>
+                    </a>            
+                </li>
+                <li>
+                    <a href="user.html">
+                        <i class="pe-7s-user"></i> 
+                        <p>Mobile No-Results</p>
+                    </a>
+                </li> 
+                <li>
+                    <a href="table.html">
+                        <i class="pe-7s-note2"></i> 
+                        <p>Tablet No-Results</p>
+                    </a>        
+                </li>
+            </ul> 
+    	</div>
+    </div>
+    
+    <div class="main-panel">
+        <nav class="navbar navbar-default navbar-fixed">
+            <div class="container-fluid">    
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example-2">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand preview" href="#">Preview</a>
+                </div>
+                <div class="collapse navbar-collapse">       
+                    <ul class="nav navbar-nav navbar-left">
+                        <li>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fon pe-7s-monitor"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fon pe-7s-monitor"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fon pe-7s-phone"></i>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </nav>
+                     
+                     
+        <div class="content">
+            <div class="container-fluid">    
+                <div class="row">
+                    
+                    
+                    <div class="col-md-8">
+                        <div class="card">
+                            <div class="header">
+                                <h4 class="title">Page Layout</h4>
+                            </div>
+                            <div class="content">
+                                <div id='right-copy-1tomany' class='container'></div>
+                        </div>
+                    </div> 
+                </div>
+
+                    <div class="col-md-4">
+                        <div class="card">
+                            <!--tabs start-->
+      <div id="tabs-container">
+        <ul class="tabs-menu">
+          <li class="current"><a href="#tab-1"><i class="icon-desktop"></i></a></li>
+          <li><a href="#tab-2"><i class="icon-tablet"></i></a></li>
+          <li><a href="#tab-3"><i class="icon-mobile-phone"></i></a></li>
+          <li><input type="button" onclick="surroundSelection()" value="Make CTA" class="btnBig"></li>
+          <li><input type="button" id="removeCTA" value="Remove all Links" onclick="removeLinks()"  class="btnBig"></li>
+        </ul>
+        <div class="tab">
+          <div id="tab-1" class="tab-content">
+            <div class="desktop">
+              <div class="mainWrapper"> 
+                <div class="BannerWrapper" style="background: #CB2727; text-align:center; font-family:arial" id="code">
+                  This domain is for sale, Click here to inquire.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="tab-2" class="tab-content">
+            <div class="tablet">
+              <div class="mainWrapper"> 
+                <div class="BannerWrapper" style="background: #CB2727; text-align:center; font-family:arial">
+                  This domain is for sale, Click here to inquire.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="tab-3" class="tab-content">
+            <div class="mob">
+              <div class="mainWrapper"> 
+                <div class="BannerWrapper" style="background: #CB2727; text-align:center; font-family:arial">
+                  This domain is for sale, Click here to inquire.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!--tabs end-->
+
+                            <div class="header">
+                                <h4 class="title">Layout</h4>
+                            </div>
+                            
+                            
+                                <div class="SingleBox">
+                                    <div id='left-copy-1tomany' class='container'>
+                                    <div>When elements are copyable, they can't be sorted in their origin container</div>
+                                    <div>Copying prevents original elements from being dragged. A copy gets created and <em>that</em> gets dragged instead</div>
+                                    <div>Whenever that happens, a <code>cloned</code> event is raised</div>
+                                    <div>Note that the clones get destroyed if they're not dropped into another container</div>
+                                    <div>You'll be dragging a copy, so when they're dropped into another container you'll see the duplication.</div>
+                                  </div>
+                                </div>
+                                <div class="DoubleBox">
+                                    <div class="box2">
+                                        <h3>2 Column Layout</h3>
+                                    </div>
+                                </div>
+                                <div class="TrippleBox">
+                                    <div class="box2">
+                                        <h3>1 Column Layout</h3>
+                                    </div>
+                                </div> 
+                            </div>
+                           
+                        </div>
+                    </div>                  
+                </div>
+                    
+                
+                
+                       
+            </div>    
+        </div>
+        
+        
+        <footer class="footer">
+            <div class="container-fluid">
+                <nav class="pull-left">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                Home
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+        </footer>
+        
+
+
+
+
+  </div>
+
+    </div>   
+
+
+
+<script src='dragula.js'></script>
+<script src='example.min.js'></script>
+
+
+</body>
+  
+
+  
+	
+	
+    
+</html>
